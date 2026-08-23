@@ -1,4 +1,3 @@
-
 /* ---------- Fonts ---------- */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
 
@@ -44,6 +43,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -52,10 +52,13 @@ body {
   color: var(--color-ink);
   line-height: 1.6;
   font-weight: 400;
+  overflow-x: hidden;
+  overflow-wrap: break-word;
 }
 
 img {
   max-width: 100%;
+  height: auto;
   display: block;
 }
 
@@ -193,6 +196,7 @@ button {
 .header-inner {
   position: relative;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   padding: 16px 24px;
@@ -233,6 +237,7 @@ button {
   gap: 28px;
 }
 
+/* ---------- Navigation ---------- */
 .nav-links a {
   font-size: 14px;
   font-weight: 500;
@@ -242,12 +247,18 @@ button {
   transition: color 0.2s ease, border-color 0.2s ease;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
-  color: var(--color-forest);
-  border-bottom-color: var(--color-terracotta);
+.nav-links a:hover {
+  color: var(--color-forest-dark);
+  border-bottom-color: transparent;
 }
 
+.nav-links a.active {
+  color: var(--color-forest-dark);
+  background-color: rgba(47, 74, 61, 0.14);
+  border-bottom-color: transparent;
+  border-radius: 8px;
+  padding: 6px 12px;
+}
 .header-actions {
   display: flex;
   align-items: center;
@@ -545,8 +556,12 @@ button {
 .cta-section {
   background-color: var(--color-forest);
   color: var(--color-white);
-  padding: 90px 0;
+  padding: 90px 40px;
   text-align: center;
+  width: calc(100% - 48px);
+  max-width: var(--container-width);
+ margin: 70px auto;
+  border-radius: 40px;
 }
 
 .cta-section h2 {
@@ -802,6 +817,14 @@ button {
    RESPONSIVE DESIGN
    ===================================================== */
 
+/* ----- Laptop / small desktop (nav starts to get tight before the
+   hamburger breakpoint, so give it a little breathing room) ----- */
+@media (max-width: 1180px) {
+  .nav-links {
+    gap: 18px;
+  }
+}
+
 /* ----- Tablet ----- */
 @media (max-width: 1024px) {
   .programs-grid,
@@ -822,13 +845,29 @@ button {
     gap: 40px;
   }
 
+  .contact-info-grid {
+    gap: 32px;
+  }
+
+  .form-grid {
+    gap: 16px;
+  }
+
   .section {
     padding: 70px 0;
   }
+
+  .cta-section {
+    max-width: calc(100% - 48px);
+  }
 }
 
-/* ----- Mobile nav + general mobile ----- */
-@media (max-width: 860px) {
+/* ----- Mobile nav + general mobile -----
+   Widened from the original 860px so tablets in both
+   portrait AND landscape (768px - 1024px) also get the
+   hamburger menu, instead of the full nav row wrapping
+   awkwardly against the logo and Register button. */
+@media (max-width: 1024px) {
   .nav-links {
     position: absolute;
     top: 100%;
@@ -850,8 +889,13 @@ button {
     border-bottom: 1px solid var(--color-border);
   }
 
+  .nav-links a.active {
+    border-radius: 0;
+  }
+
   .menu-toggle-checkbox:checked ~ .nav-links {
     max-height: 420px;
+    overflow-y: auto;
   }
 
   .menu-toggle-label {
@@ -860,6 +904,23 @@ button {
 
   .header-actions .btn-primary {
     display: none;
+  }
+}
+
+/* ----- Tablet portrait (fine-tune spacing now that the
+   nav is out of the way; grids/columns are untouched) ----- */
+@media (max-width: 768px) {
+  .about-grid,
+  .about-grid.reverse {
+    gap: 28px;
+  }
+
+  .contact-info-grid {
+    gap: 24px;
+  }
+
+  .stat-badge {
+    padding: 16px 20px;
   }
 }
 
@@ -914,5 +975,67 @@ button {
 
   .about-image img {
     height: 280px;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .cta-section {
+  max-width: calc(100% - 32px);
+  padding: 60px 24px;
+  margin: 50px auto;
+  border-radius: 30px;
+ }
+
+ .cta-buttons .btn-primary,
+  .cta-buttons .btn-accent,
+  .cta-buttons .btn-outline {
+    width: 100%;
+  }
+
+ /* ---------- Forms ---------- */
+  .form-card {
+    padding: 24px;
+  }
+
+  .footer-social {
+    flex-wrap: wrap;
+  }
+
+  .footer-logo-text,
+  .logo-text {
+    font-size: 18px;
+  }
+}
+
+/* ----- Small mobile ----- */
+@media (max-width: 400px) {
+  .container {
+    padding: 0 14px;
+  }
+
+  .cta-section {
+    max-width: calc(100% - 24px);
+    padding: 48px 16px;
+    border-radius: 24px;
+  }
+
+  .form-card {
+    padding: 18px;
+  }
+
+  .header-actions {
+    gap: 8px;
+  }
+
+  .logo-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 17px;
+  }
+
+  .logo-text {
+    font-size: 16px;
   }
 }
