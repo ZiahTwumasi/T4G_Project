@@ -416,7 +416,7 @@ button {
   margin-top: 8px;
 }
 
-/* ---------- Cards (shared) ---------- */
+/*  Cards (shared) */
 .card {
   background-color: var(--color-white);
   border-radius: var(--radius-lg);
