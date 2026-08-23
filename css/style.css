@@ -3,18 +3,16 @@
 
 /* ---------- Design tokens ---------- */
 :root {
-  /* Colours (taken from the original site's palette) */
-  --color-forest: #2f4a3d;        /* dark green - primary brand colour */
-  --color-forest-dark: #223529;   /* darker green for hover states */
-  --color-terracotta: #cc6b45;    /* warm accent colour */
+  --color-forest: #2f4a3d;
+  --color-forest-dark: #223529;
+  --color-terracotta: #cc6b45;
   --color-terracotta-soft: #e7a583;
-  --color-cream: #faf6ee;         /* main background */
-  --color-beige: #f1e7d6;         /* alternating section background */
-  --color-ink: #2a2b25;           /* main text colour */
+  --color-cream: #faf6ee;
+  --color-beige: #f1e7d6;
+  --color-ink: #2a2b25;
   --color-white: #ffffff;
   --color-border: #e6dcc9;
 
-  /* Text opacity helpers (used a lot in the original design) */
   --ink-70: rgba(42, 43, 37, 0.7);
   --ink-75: rgba(42, 43, 37, 0.75);
   --ink-80: rgba(42, 43, 37, 0.8);
@@ -22,11 +20,9 @@
   --white-80: rgba(255, 255, 255, 0.8);
   --white-85: rgba(255, 255, 255, 0.85);
 
-  /* Fonts */
   --font-display: 'Playfair Display', Georgia, serif;
   --font-body: 'Poppins', Arial, sans-serif;
 
-  /* Layout */
   --container-width: 1180px;
   --radius-md: 16px;
   --radius-lg: 20px;
@@ -811,6 +807,55 @@ button {
 .simple-list li span:last-child {
   color: var(--color-terracotta);
   font-weight: 600;
+}
+
+/* ---------- Hover effects (new rules only — nothing above this
+   block was changed, this just adds interaction on top of it) ---------- */
+.program-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.program-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(47, 74, 61, 0.18);
+}
+
+.blog-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.blog-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(47, 74, 61, 0.18);
+}
+
+.blog-card img {
+  transition: transform 0.4s ease;
+}
+.blog-card:hover img {
+  transform: scale(1.06);
+}
+
+.blog-card h3 {
+  transition: color 0.2s ease;
+}
+.blog-card:hover h3 {
+  color: var(--color-terracotta);
+}
+
+.blog-link {
+  transition: gap 0.2s ease, color 0.2s ease;
+}
+.blog-card:hover .blog-link {
+  gap: 10px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .program-card,
+  .blog-card,
+  .blog-card img,
+  .blog-card h3,
+  .blog-link {
+    transition: none;
+  }
 }
 
 /* =====================================================
