@@ -580,103 +580,107 @@ button {
 }
 
 /* ---------- Footer ---------- */
+
 .site-footer {
-  background-color: var(--color-forest);
-  color: var(--white-70);
+background-color: var(--color-forest);
+color: var(--white-70);
 }
 
 .footer-grid {
-  padding: 70px 0;
-  display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1fr;
-  gap: 40px;
+padding: 25px 0;
+display: grid;
+grid-template-columns: 1.4fr 1fr 1fr 1fr;
+gap: 40px;
+max-width: 1100px;
+margin: 0 auto;
 }
 
 .footer-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 16px;
+display: flex;
+align-items: center;
+gap: 10px;
+margin-bottom: 16px;
 }
 
 .footer-logo .logo-icon {
-  background-color: var(--color-terracotta);
+background-color: var(--color-terracotta);
 }
 
 .footer-logo-text {
-  font-family: var(--font-display);
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--color-white);
+font-family: var(--font-display);
+font-size: 20px;
+font-weight: 700;
+color: var(--color-white);
 }
 
 .footer-about p {
-  font-size: 14px;
-  line-height: 1.7;
+font-size: 14px;
+line-height: 1.7;
 }
 
 .footer-col h4 {
-  color: var(--color-white);
-  font-family: var(--font-body);
-  font-size: 15px;
-  font-weight: 600;
-  margin-bottom: 18px;
+color: var(--color-white);
+font-family: var(--font-body);
+font-size: 15px;
+font-weight: 600;
+margin-bottom: 18px;
 }
 
 .footer-col ul li {
-  margin-bottom: 10px;
+margin-bottom: 10px;
 }
 
 .footer-col ul li a,
 .footer-contact li {
-  font-size: 14px;
-  transition: color 0.2s ease;
+font-size: 14px;
+transition: color 0.2s ease;
 }
 
 .footer-col ul li a:hover {
-  color: var(--color-terracotta-soft);
+color: var(--color-terracotta-soft);
 }
 
 .footer-contact li {
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-  margin-bottom: 14px;
+display: flex;
+gap: 10px;
+align-items: flex-start;
+margin-bottom: 14px;
 }
 
 .footer-social {
-  display: flex;
-  gap: 12px;
+display: flex;
+gap: 12px;
 }
 
 .social-icon {
-  display: grid;
-  place-items: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.1);
-  color: var(--color-white);
-  transition: background-color 0.2s ease;
+display: grid;
+place-items: center;
+width: 40px;
+height: 40px;
+border-radius: 50%;
+background-color: rgba(255, 255, 255, 0.1);
+color: var(--color-white);
+transition: background-color 0.2s ease;
 }
 
 .social-icon:hover {
-  background-color: var(--color-terracotta);
+background-color: var(--color-terracotta);
 }
 
 .footer-hours {
-  margin-top: 24px;
-  font-size: 12px;
-  color: var(--white-70);
+margin-top: 24px;
+font-size: 12px;
+color: var(--white-70);
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 18px 0;
-  text-align: center;
-  font-size: 12px;
-  color: var(--white-70);
+border-top: 1px solid rgba(255, 255, 255, 0.1);
+padding: 10px 0;
+text-align: center;
+font-size: 12px;
+color: var(--white-70);
 }
+
 
 /* ---------- Forms (contact / register) ---------- */
 .form-card {
@@ -809,8 +813,6 @@ button {
   font-weight: 600;
 }
 
-/* ---------- Hover effects (new rules only — nothing above this
-   block was changed, this just adds interaction on top of it) ---------- */
 .program-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
